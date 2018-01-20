@@ -1,0 +1,29 @@
+<resources>
+    <string name="app_name">SimpleCalculator</string>
+    <string name="Display">Display</string>
+    <string name="btn_num0">0</string>
+    <string name="btn_num1">1</string>
+    <string name="btn_num2">2</string>
+    <string name="btn_num3">3</string>
+    <string name="btn_num4">4</string>
+    <string name="btn_num5">5</string>
+    <string name="btn_num6">6</string>
+    <string name="btn_num7">7</string>
+    <string name="btn_num8">8</string>
+    <string name="btn_num9">9</string>
+    <string name="btn_point">.</string>
+    <string name="btn_op_plus">+</string>
+    <string name="btn_op_minus">-</string>
+    <string name="btn_op_mult">×</string>
+    <string name="btn_op_div">÷</string>
+    <string name="btn_op_eq">=</string>
+    <string name="btn_op_CE">CE</string>
+    <string name="btn_op_C">C</string>
+    <string name="btn_op_plus_minus">±</string>
+    <string name="btn_op_back">\u232b</string>
+    <string name="btn_op_percent">%</string>
+    <string name="btn_op_sqroot">√</string>
+    <string name="btn_op_square">x²</string>
+    <string name="btn_op_inv">1/x</string>
+
+</resources>
