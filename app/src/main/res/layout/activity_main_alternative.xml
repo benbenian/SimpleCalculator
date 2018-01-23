@@ -1,0 +1,328 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingLeft="16dp"
+    android:paddingRight="16dp"
+    android:orientation="vertical"
+    android:gravity="center">
+
+    <!-- Include other widget or layout tags here. These are considered
+            "child views" or "children" of the linear layout -->
+
+
+    <TextView
+        android:id="@+id/id_displayTop"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAlignment="textEnd"
+
+        android:textSize="30sp" />
+
+    <TextView
+        android:id="@+id/id_displayMain"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAlignment="textEnd"
+        android:textSize="60sp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/id_btn_op_percent"
+            style="@style/Widget.AppCompat.Button.Borderless"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="@string/btn_op_percent"
+            android:textAlignment="center"
+            android:textSize="24sp"
+            android:onClick="opPercent"/>
+
+        <Button
+            android:id="@+id/id_btn_op_sqroot"
+            style="@style/Widget.AppCompat.Button.Borderless"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="@string/btn_op_sqroot"
+            android:textAlignment="center"
+            android:textSize="24sp"
+            android:onClick="opSqroot"/>
+
+        <Button
+            android:id="@+id/id_btn_op_square"
+            style="@style/Widget.AppCompat.Button.Borderless"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="@string/btn_op_square"
+            android:textAlignment="center"
+            android:textSize="24sp"
+            android:onClick="opSquare"/>
+
+        <Button
+            android:id="@+id/id_btn_op_inv"
+            style="@style/Widget.AppCompat.Button.Borderless"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="@string/btn_op_inv"
+            android:textAlignment="center"
+            android:textSize="24sp"
+            android:onClick="opInv"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/id_btn_op_CE"
+            style="@style/Widget.AppCompat.Button.Borderless"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="@string/btn_op_CE"
+            android:textAlignment="center"
+            android:textSize="24sp"
+            android:onClick="opCE"/>
+
+        <Button
+            android:id="@+id/id_btn_op_C"
+            style="@style/Widget.AppCompat.Button.Borderless"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="@string/btn_op_C"
+            android:textAlignment="center"
+            android:textSize="24sp"
+            android:onClick="opC"/>
+
+        <Button
+            android:id="@+id/id_btn_op_back"
+            style="@style/Widget.AppCompat.Button.Borderless"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="@string/btn_op_back"
+            android:textAlignment="center"
+            android:textSize="24sp"
+            android:onClick="opBack"/>
+
+        <Button
+            android:id="@+id/id_btn_op_plus_minus"
+            style="@style/Widget.AppCompat.Button.Borderless"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="@string/btn_op_plus_minus"
+            android:textAlignment="center"
+            android:textSize="24sp"
+            android:onClick="opPlusMinus"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/id_btn_num7"
+            style="@style/Widget.AppCompat.Button.Borderless"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="@string/btn_num7"
+            android:textAlignment="center"
+            android:textSize="24sp"
+            android:onClick="num7"/>
+
+        <Button
+            android:id="@+id/id_btn_num8"
+            style="@style/Widget.AppCompat.Button.Borderless"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="@string/btn_num8"
+            android:textAlignment="center"
+            android:textSize="24sp"
+            android:onClick="num8"/>
+
+        <Button
+            android:id="@+id/id_btn_num9"
+            style="@style/Widget.AppCompat.Button.Borderless"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="@string/btn_num9"
+            android:textAlignment="center"
+            android:textSize="24sp"
+            android:onClick="num9"/>
+
+        <Button
+            android:id="@+id/id_btn_op_div"
+            style="@style/Widget.AppCompat.Button.Borderless"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="@string/btn_op_div"
+            android:textAlignment="center"
+            android:textSize="24sp"
+            android:onClick="opDiv"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/id_btn_num4"
+            style="@style/Widget.AppCompat.Button.Borderless"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="@string/btn_num4"
+            android:textAlignment="center"
+            android:textSize="24sp"
+            android:onClick="num4"/>
+
+        <Button
+            android:id="@+id/id_btn_num5"
+            style="@style/Widget.AppCompat.Button.Borderless"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="@string/btn_num5"
+            android:textAlignment="center"
+            android:textSize="24sp"
+            android:onClick="num5"/>
+
+        <Button
+            android:id="@+id/id_btn_num6"
+            style="@style/Widget.AppCompat.Button.Borderless"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="@string/btn_num6"
+            android:textAlignment="center"
+            android:textSize="24sp"
+            android:onClick="num6"/>
+
+        <Button
+            android:id="@+id/id_btn_op_mult"
+            style="@style/Widget.AppCompat.Button.Borderless"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="@string/btn_op_mult"
+            android:textAlignment="center"
+            android:textSize="24sp"
+            android:onClick="opMult"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/id_btn_num1"
+            style="@style/Widget.AppCompat.Button.Borderless"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="@string/btn_num1"
+            android:textAlignment="center"
+            android:textSize="24sp"
+            android:onClick="num1"/>
+
+        <Button
+            android:id="@+id/id_btn_num2"
+            style="@style/Widget.AppCompat.Button.Borderless"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="@string/btn_num2"
+            android:textAlignment="center"
+            android:textSize="24sp"
+            android:onClick="num2"/>
+
+        <Button
+            android:id="@+id/id_btn_num3"
+            style="@style/Widget.AppCompat.Button.Borderless"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="@string/btn_num3"
+            android:textAlignment="center"
+            android:textSize="24sp"
+            android:onClick="num3"/>
+
+        <Button
+            android:id="@+id/id_btn_op_minus"
+            style="@style/Widget.AppCompat.Button.Borderless"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="@string/btn_op_minus"
+            android:textAlignment="center"
+            android:textSize="24sp"
+            android:onClick="opMinus"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/id_btn_num0"
+            style="@style/Widget.AppCompat.Button.Borderless"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="@string/btn_num0"
+            android:textAlignment="center"
+            android:textSize="24sp"
+            android:onClick="num0"/>
+
+        <Button
+            android:id="@+id/id_btn_point"
+            style="@style/Widget.AppCompat.Button.Borderless"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="@string/btn_point"
+            android:textAlignment="center"
+            android:textSize="24sp"
+            android:onClick="opPoint"/>
+
+        <Button
+            android:id="@+id/id_btn_op_eq"
+            style="@style/Widget.AppCompat.Button.Borderless"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="@string/btn_op_eq"
+            android:textAlignment="center"
+            android:textSize="24sp"
+            android:onClick="opEq"/>
+
+        <Button
+            android:id="@+id/id_btn_op_plus"
+            style="@style/Widget.AppCompat.Button.Borderless"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="@string/btn_op_plus"
+            android:textAlignment="center"
+            android:textSize="24sp"
+            android:onClick="opPlus"/>
+    </LinearLayout>
+
+</LinearLayout>
