@@ -25,7 +25,8 @@
     <string name="btn_op_sqroot">√</string>
     <string name="btn_op_square">x²</string>
     <string name="btn_op_inv">1/x</string>
-
+    <string name="btn_op_open_bracket">(</string>
+    <string name="btn_op_close_bracket">)</string>
 
 
 </resources>

@@ -14,6 +14,7 @@ public class MainActivity extends AppCompatActivity {
     double valueTwo;
     String currentOp = "";
     DecimalFormat decimalFormat = new DecimalFormat("#.########");
+    String debugStr = "";
 
 
     @Override
@@ -35,132 +36,60 @@ public class MainActivity extends AppCompatActivity {
         tv.setText(str);
     }
 
-    /* Compute */
-    public void compute() {
-        try {
+    public void showOnDebug() {
+        String str;
+        TextView tv = findViewById(R.id.degug);
+        str = "mainDisplay: " + mainDisplay + "\n";
+        str += "topDisplay: " + topDisplay + "\n";
+        str += "valueOne: " + decimalFormat.format(valueOne) + "\n";
+        str += "valueTwo: " + decimalFormat.format(valueTwo) + "\n";
+        str += "currentOp: " + currentOp + "\n";
 
-            if (!Double.isNaN(valueOne)) {
+        tv.setText(str);
+    }
 
-                valueTwo = Double.parseDouble(mainDisplay);
-                mainDisplay = "";
-                showOnMainDisplay(mainDisplay);
+    public double parseInput(String input) {
+        String temp = "";
+        double expr1 = 0;
+        double ans;
+        int bracket = 0, openBracket=0, closeBracket=0;
 
 
-                switch (currentOp) {
-                    case "Percent":
-                        break;
-                    case "Sqroot":
-                        break;
-                    case "Square":
 
-                        break;
-                    case "Inv":
-                        break;
-                    case "Eq":
-                        showOnMainDisplay(decimalFormat.format(valueOne));
-                        break;
-                    case "Plus":
-                        valueOne += valueTwo;
-                        showOnMainDisplay(decimalFormat.format(valueOne));
-                        topDisplay = topDisplay + "+" + decimalFormat.format(valueTwo);
-                        showOnTopDisplay(topDisplay);
-                        break;
-                    case "Minus":
-                        valueOne -= valueTwo;
-                        showOnMainDisplay(decimalFormat.format(valueOne));
-                        topDisplay = topDisplay + "-" + decimalFormat.format(valueTwo);
-                        showOnTopDisplay(topDisplay);
-
-                        break;
-                    case "Mult":
-                        valueOne *= valueTwo;
-                        showOnMainDisplay(decimalFormat.format(valueOne));
-                        topDisplay = topDisplay + "x" + decimalFormat.format(valueTwo);
-                        showOnTopDisplay(topDisplay);
-
-                        break;
-                    case "Div":
-                        valueOne /= valueTwo;
-                        showOnMainDisplay(decimalFormat.format(valueOne));
-                        topDisplay = topDisplay + "÷" + decimalFormat.format(valueTwo);
-                        showOnTopDisplay(topDisplay);
-
-                        break;
-                }
-            } else {
-                valueOne = Double.parseDouble(mainDisplay);
-                topDisplay = decimalFormat.format(valueOne);
-                showOnTopDisplay(topDisplay);
-                mainDisplay = "";
-            }
-
-        } catch (Exception e) {
-        }
+    return 0.0;
     }
 
 
     /* Operations Buttons*/
     public void opPercent(View view) {
-    }
-
-    public void opSqroot(View view) {
+        mainDisplay += "%";
+        showOnMainDisplay(mainDisplay);
     }
 
     public void opSquare(View view) {
-        if (!mainDisplay.isEmpty() && Double.isNaN(valueOne)) {
-            valueOne = Double.parseDouble(mainDisplay);
-            topDisplay = topDisplay + "sqr(" + decimalFormat.format(valueOne) + ")";
-            valueOne *= valueOne;
-            showOnTopDisplay(topDisplay);
-            showOnMainDisplay(decimalFormat.format(valueOne));
-            mainDisplay = "";
-        }
-        else if (mainDisplay.isEmpty() && !Double.isNaN(valueOne)) {
-            valueOne *= valueOne;
-            showOnMainDisplay(decimalFormat.format(valueOne));
-            //mainDisplay = decimalFormat.format(valueOne);
-            //compute();
-        }
-
-        //compute();
-
+        mainDisplay += "²";
+        showOnMainDisplay(mainDisplay);
     }
 
-    public void opInv(View view) {
+    public void opOpenBracket(View view) {
+        mainDisplay += "(";
+        showOnMainDisplay(mainDisplay);
     }
 
-    public void opCE(View view) {
-        mainDisplay = "";
+    public void opCloseBracket(View view) {
+        mainDisplay += ")";
         showOnMainDisplay(mainDisplay);
     }
 
     public void opC(View view) {
         mainDisplay = "";
         showOnMainDisplay(mainDisplay);
-        topDisplay = "";
-        showOnTopDisplay(topDisplay);
-        valueOne = Double.NaN;
-        currentOp = "";
     }
 
     public void opBack(View view) {
-        if (!mainDisplay.equals("")) {
+        if (!mainDisplay.isEmpty())
             mainDisplay = mainDisplay.substring(0, mainDisplay.length() - 1);
-        }
         showOnMainDisplay(mainDisplay);
-    }
-
-    public void opPlusMinus(View view) {
-        if (!mainDisplay.isEmpty()) {
-            if (mainDisplay.charAt(0) == '-')
-                mainDisplay = mainDisplay.substring(1, mainDisplay.length());
-            else if (Character.isDigit(mainDisplay.charAt(0)))
-                mainDisplay = "-" + mainDisplay;
-            showOnMainDisplay(mainDisplay);
-        } else if (!Double.isNaN(valueOne)) {
-            showOnMainDisplay(decimalFormat.format(0 - valueOne));
-            mainDisplay = decimalFormat.format(0 - valueOne);
-        }
     }
 
     public void opPoint(View view) {
@@ -169,36 +98,29 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void opEq(View view) {
-        compute();
-        valueOne = Double.NaN;
-        currentOp = "";
-        topDisplay = "";
-        showOnTopDisplay(topDisplay);
-        mainDisplay = "";
+        double ans = Double.NaN;
+        ans = parseInput(mainDisplay);
+        showOnMainDisplay(decimalFormat.format(ans));
     }
 
     public void opPlus(View view) {
-        if (!mainDisplay.equals("")) compute();
-        if (!topDisplay.equals("")) showOnTopDisplay(topDisplay + "+");
-        currentOp = "Plus";
+        mainDisplay += "+";
+        showOnMainDisplay(mainDisplay);
     }
 
     public void opMinus(View view) {
-        if (!mainDisplay.equals("")) compute();
-        if (!topDisplay.equals("")) showOnTopDisplay(topDisplay + "-");
-        currentOp = "Minus";
+        mainDisplay += "-";
+        showOnMainDisplay(mainDisplay);
     }
 
     public void opMult(View view) {
-        if (!mainDisplay.equals("")) compute();
-        if (!topDisplay.equals("")) showOnTopDisplay(topDisplay + "x");
-        currentOp = "Mult";
+        mainDisplay += "x";
+        showOnMainDisplay(mainDisplay);
     }
 
     public void opDiv(View view) {
-        if (!mainDisplay.equals("")) compute();
-        if (!topDisplay.equals("")) showOnTopDisplay(topDisplay + "÷");
-        currentOp = "Div";
+        mainDisplay += "÷";
+        showOnMainDisplay(mainDisplay);
     }
 
     /* Number Buttons*/

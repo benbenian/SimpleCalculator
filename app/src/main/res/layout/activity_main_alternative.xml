@@ -11,6 +11,12 @@
 
 
     <TextView
+        android:id="@+id/degug"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="TextView" />
+
+    <TextView
         android:id="@+id/id_displayTop"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -53,26 +59,26 @@
             android:onClick="opSqroot"/>
 
         <Button
-            android:id="@+id/id_btn_op_square"
+            android:id="@+id/id_op_open_bracket"
             style="@style/Widget.AppCompat.Button.Borderless"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:text="@string/btn_op_square"
+            android:onClick="opOpenBracket"
+            android:text="@string/btn_op_open_bracket"
             android:textAlignment="center"
-            android:textSize="24sp"
-            android:onClick="opSquare"/>
+            android:textSize="24sp" />
 
         <Button
-            android:id="@+id/id_btn_op_inv"
+            android:id="@+id/id_op_close_bracket"
             style="@style/Widget.AppCompat.Button.Borderless"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:text="@string/btn_op_inv"
+            android:text="@string/btn_op_close_bracket"
             android:textAlignment="center"
             android:textSize="24sp"
-            android:onClick="opInv"/>
+            android:onClick="opCloseBracket"/>
     </LinearLayout>
 
     <LinearLayout
@@ -114,12 +120,12 @@
             android:onClick="opBack"/>
 
         <Button
-            android:id="@+id/id_btn_op_plus_minus"
+            android:id="@+id/id_btn_op_square"
             style="@style/Widget.AppCompat.Button.Borderless"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:text="@string/btn_op_plus_minus"
+            android:text="@string/btn_op_square"
             android:textAlignment="center"
             android:textSize="24sp"
             android:onClick="opPlusMinus"/>
