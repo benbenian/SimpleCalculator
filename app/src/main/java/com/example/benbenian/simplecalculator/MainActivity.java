@@ -14,7 +14,7 @@ public class MainActivity extends AppCompatActivity {
     double valueTwo;
     String currentOp = "";
     DecimalFormat decimalFormat = new DecimalFormat("#.########");
-    String debugStr = "";
+    //String debugStr = "";
 
 
     @Override
@@ -49,35 +49,33 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public double parseInput(String input) {
-        String temp = "";
-        double expr1 = 0;
-        double ans;
-        int bracket = 0, openBracket=0, closeBracket=0;
 
-
-
-    return 0.0;
+        return 0.0;
     }
 
 
     /* Operations Buttons*/
     public void opPercent(View view) {
-        mainDisplay += "%";
+        mainDisplay += " % ";
         showOnMainDisplay(mainDisplay);
     }
 
     public void opSquare(View view) {
-        mainDisplay += "²";
+        mainDisplay += " ² ";
+        showOnMainDisplay(mainDisplay);
+    }
+    public void opSqroot(View view){
+        mainDisplay += " √ ";
         showOnMainDisplay(mainDisplay);
     }
 
     public void opOpenBracket(View view) {
-        mainDisplay += "(";
+        mainDisplay += " ( ";
         showOnMainDisplay(mainDisplay);
     }
 
     public void opCloseBracket(View view) {
-        mainDisplay += ")";
+        mainDisplay += " ) ";
         showOnMainDisplay(mainDisplay);
     }
 
@@ -98,28 +96,36 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void opEq(View view) {
-        double ans = Double.NaN;
-        ans = parseInput(mainDisplay);
+        //double ans;
+        //ans = parseInput(mainDisplay);
+        //showOnMainDisplay(decimalFormat.format(ans));
+        //ShuntingYard sy = new ShuntingYard();
+        String postfix;
+        Double ans;
+        postfix = ShuntingYard.convertToPostfix(mainDisplay);
+        showOnTopDisplay(ShuntingYard.convertToPostfix(postfix));
+        ans = ShuntingYard.evalPostfix(postfix);
         showOnMainDisplay(decimalFormat.format(ans));
+
     }
 
     public void opPlus(View view) {
-        mainDisplay += "+";
+        mainDisplay += " + ";
         showOnMainDisplay(mainDisplay);
     }
 
     public void opMinus(View view) {
-        mainDisplay += "-";
+        mainDisplay += " - ";
         showOnMainDisplay(mainDisplay);
     }
 
     public void opMult(View view) {
-        mainDisplay += "x";
+        mainDisplay += " x ";
         showOnMainDisplay(mainDisplay);
     }
 
     public void opDiv(View view) {
-        mainDisplay += "÷";
+        mainDisplay += " ÷ ";
         showOnMainDisplay(mainDisplay);
     }
 

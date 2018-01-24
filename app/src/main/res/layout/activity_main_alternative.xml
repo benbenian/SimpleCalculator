@@ -128,7 +128,7 @@
             android:text="@string/btn_op_square"
             android:textAlignment="center"
             android:textSize="24sp"
-            android:onClick="opPlusMinus"/>
+            android:onClick="opSquare"/>
     </LinearLayout>
 
     <LinearLayout
